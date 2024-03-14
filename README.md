@@ -57,7 +57,7 @@ instance-public-dns = "ec2-52-91-145-82.compute-1.amazonaws.com"
 Make sure that you have the shared SSH key that we're using for the labs.  Ask the PM team for it if you don't have it already.
 
 ```bash
-chmod 400 PMTeam-us-east-1.PMTeam
+chmod 400 PMTeam-us-east-1.pem
 ssh -i PMTeam-us-east-1.pem ubuntu@<DNS from output>
 ```
 
