@@ -1,7 +1,10 @@
 
 # How to build a network lab for the PM Team
 
-A brief description of what this project does and who it's for
+This should be a quick and easy setup and teardown of lab environments for demoing and internal use.
+
+NOTE: THE LAB DOES NOT SHUT ITSELF DOWN.  MAKE SURE YOU USE TERRAFORM TO DELETE THE ENVIRONMENT WHEN DONE.
+
 
 ## Requirements
 
