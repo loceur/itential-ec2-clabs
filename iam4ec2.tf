@@ -17,21 +17,12 @@ data aws_iam_policy_document "s3_read_access" {
   }
 }
 
-resource "aws_iam_role" "ec2_iam_role" {
+data "aws_iam_role" "ec2_iam_role" {
   name = "ec2_iam_role"
 
-  assume_role_policy = "${data.aws_iam_policy_document.ec2_assume_role.json}"
 }
 
-resource "aws_iam_role_policy" "join_policy" {
-  depends_on = [aws_iam_role.ec2_iam_role]
-  name       = "join_policy"
-  role       = "${aws_iam_role.ec2_iam_role.name}"
 
-  policy = "${data.aws_iam_policy_document.s3_read_access.json}"
-}
-
-resource "aws_iam_instance_profile" "instance_profile" {
+data "aws_iam_instance_profile" "instance_profile" {
   name = "instance_profile"
-  role = "${aws_iam_role.ec2_iam_role.name}"
 }
