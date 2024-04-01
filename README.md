@@ -52,6 +52,18 @@ instance-id = "i-05aa2c357fe28fbf0"
 instance-public-dns = "ec2-52-91-145-82.compute-1.amazonaws.com"
 ```
 
+#### (Optional) AWS Profiles
+
+NOTE: if you use profiles for the aws cli, then you'll need to set the aws-profile var in terraform to be able to use the appropriate credentials
+```bash
+aws configure --profile=<PROFILE_NAME>
+```
+
+```bash
+terraform apply -auto-approve -var="aws-profile=<PROFILE_NAME>"
+```
+
+
 #### SSH to Environment
 
 Make sure that you have the shared SSH key that we're using for the labs.  Ask the PM team for it if you don't have it already.
